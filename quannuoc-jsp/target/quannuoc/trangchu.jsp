@@ -4,17 +4,9 @@
 <c:set var="pageTitle" value="Thực đơn - Quán Nước" scope="request" />
 <jsp:include page="/common/header.jsp" />
 
-<section class="hero">
-    <div class="hero-content">
-        <span class="hero-eyebrow">Quán Nước &middot; Tươi mới mỗi ngày</span>
-        <h1>Thức uống ngon, pha chế từ tâm</h1>
-        <p>Chọn món yêu thích, tuỳ chỉnh size &amp; topping, giao tận nơi trong vài phút.</p>
-    </div>
-</section>
-
 <div class="container">
-    <form class="search-form" action="${pageContext.request.contextPath}/trang-chu" method="get" style="margin-bottom:24px;max-width:420px;">
-        <input type="text" name="keyword" value="${keyword}" placeholder="🔍 Tìm đồ uống...">
+    <form class="search-form" action="${pageContext.request.contextPath}/trang-chu" method="get" style="margin-bottom:20px;">
+        <input type="text" name="keyword" value="${keyword}" placeholder="Tìm đồ uống...">
         <button type="submit" class="btn">Tìm kiếm</button>
     </form>
 
@@ -32,14 +24,12 @@
         </c:when>
         <c:otherwise>
             <div class="drink-grid">
-                <c:forEach items="${listDrink}" var="d" varStatus="st">
-                    <a class="drink-card" style="animation-delay:${st.index * 0.04}s" href="${pageContext.request.contextPath}/do-uong/chi-tiet?id=${d.id}">
-                        <div class="thumb">
-                            <img src="${not empty d.image ? d.image : 'https://placehold.co/400x300?text=Do+uong'}" alt="${d.name}">
-                        </div>
+                <c:forEach items="${listDrink}" var="d">
+                    <a class="drink-card" href="${pageContext.request.contextPath}/do-uong/chi-tiet?id=${d.id}">
+                        <img src="${not empty d.image ? d.image : 'https://placehold.co/400x300?text=Do+uong'}" alt="${d.name}">
                         <div class="info">
                             <h3>${d.name}</h3>
-                            <div class="price"><span><fmt:formatNumber value="${d.price}" pattern="#,###" /> đ</span></div>
+                            <div class="price"><fmt:formatNumber value="${d.price}" pattern="#,###" /> đ</div>
                         </div>
                     </a>
                 </c:forEach>

@@ -5,14 +5,13 @@
 <jsp:include page="/common/header.jsp" />
 
 <div class="container">
-    <h2>🛒 Giỏ hàng của bạn</h2>
+    <h2>Giỏ hàng của bạn</h2>
 
     <c:choose>
         <c:when test="${empty cart.items}">
             <div class="empty-state">
-                <h2 style="margin-bottom:8px;">Giỏ hàng đang trống</h2>
-                Hãy chọn vài món yêu thích để bắt đầu.<br>
-                <a href="${pageContext.request.contextPath}/trang-chu" class="btn" style="margin-top:18px;">Xem thực đơn</a>
+                Giỏ hàng đang trống.<br>
+                <a href="${pageContext.request.contextPath}/trang-chu" class="btn" style="margin-top:14px;">Xem thực đơn</a>
             </div>
         </c:when>
         <c:otherwise>

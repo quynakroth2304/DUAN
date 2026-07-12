@@ -52,7 +52,7 @@
                 <label>
                     <input type="checkbox" name="toppingId" value="${t.id}"
                         ${fn:contains(selectedToppingIds, t.id) ? 'checked' : ''}>
-                        ${t.name}
+                    ${t.name}
                 </label>
             </c:forEach>
         </div>

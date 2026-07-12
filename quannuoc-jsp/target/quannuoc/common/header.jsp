@@ -22,7 +22,7 @@
         <c:if test="${not empty user and user.role}">
             <a href="${ctx}/admin/don-hang">Trang quản trị</a>
         </c:if>
-        <a href="${ctx}/gio-hang">🛒 Giỏ hàng<c:if test="${not empty cart and cart.itemCount > 0}"> (${cart.itemCount})</c:if></a>
+        <a href="${ctx}/gio-hang">Giỏ hàng<c:if test="${not empty cart and cart.itemCount > 0}"> (${cart.itemCount})</c:if></a>
         <c:choose>
             <c:when test="${not empty user}">
                 <a href="${ctx}/dang-xuat">Đăng xuất (${user.fullName})</a>

@@ -20,11 +20,11 @@
 </header>
 <div class="admin-layout">
     <aside class="admin-sidebar">
-        <a href="${ctx}/admin/don-hang" class="${activeMenu == 'don-hang' ? 'active' : ''}">🧾 Đơn hàng</a>
-        <a href="${ctx}/admin/do-uong" class="${activeMenu == 'do-uong' ? 'active' : ''}">🥤 Đồ uống</a>
-        <a href="${ctx}/admin/danh-muc" class="${activeMenu == 'danh-muc' ? 'active' : ''}">🗂 Danh mục</a>
-        <a href="${ctx}/admin/size" class="${activeMenu == 'size' ? 'active' : ''}">📏 Size</a>
-        <a href="${ctx}/admin/topping" class="${activeMenu == 'topping' ? 'active' : ''}">✨ Topping</a>
-        <a href="${ctx}/admin/nguoi-dung" class="${activeMenu == 'nguoi-dung' ? 'active' : ''}">👤 Người dùng</a>
+        <a href="${ctx}/admin/don-hang" class="${activeMenu == 'don-hang' ? 'active' : ''}">Đơn hàng</a>
+        <a href="${ctx}/admin/do-uong" class="${activeMenu == 'do-uong' ? 'active' : ''}">Đồ uống</a>
+        <a href="${ctx}/admin/danh-muc" class="${activeMenu == 'danh-muc' ? 'active' : ''}">Danh mục</a>
+        <a href="${ctx}/admin/size" class="${activeMenu == 'size' ? 'active' : ''}">Size</a>
+        <a href="${ctx}/admin/topping" class="${activeMenu == 'topping' ? 'active' : ''}">Topping</a>
+        <a href="${ctx}/admin/nguoi-dung" class="${activeMenu == 'nguoi-dung' ? 'active' : ''}">Người dùng</a>
     </aside>
     <main class="admin-content">

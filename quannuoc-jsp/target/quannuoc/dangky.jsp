@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="card-box">
-        <h2>✨ Tạo tài khoản mới</h2>
+        <h2>Tạo tài khoản mới</h2>
 
         <c:if test="${not empty error}">
             <div class="alert alert-error">${error}</div>

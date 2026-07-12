@@ -19,13 +19,17 @@ public class BillServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         User user = session == null ? null : (User) session.getAttribute("currentUser");
+
+        // Kiểm tra đăng nhập
         if (user == null) {
             resp.sendRedirect(req.getContextPath() + "/dang-nhap?redirect=" + req.getRequestURI());
-            return;
-        }
+            return; // Dừng hàm lại tại đây nếu chưa đăng nhập
+        } // Đã đóng ngoặc if đúng vị trí
 
+        // Khai báo biến uri ở ngoài để toàn bộ hàm doGet có thể sử dụng
         String uri = req.getRequestURI();
 
+        // Đã xóa chữ String bị dư
         if (uri.contains("/chi-tiet")) {
             Integer id = Integer.parseInt(req.getParameter("id"));
             Bill bill = billService.findById(id);

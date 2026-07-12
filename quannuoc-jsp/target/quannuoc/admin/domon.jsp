@@ -6,7 +6,7 @@
 <jsp:include page="/common/admin-header.jsp" />
 
 <div class="toolbar">
-    <h2>🥤 Danh sách Đồ uống</h2>
+    <h2>Danh sách Đồ uống</h2>
     <a href="${pageContext.request.contextPath}/admin/do-uong/them" class="btn">+ Thêm đồ uống</a>
 </div>
 

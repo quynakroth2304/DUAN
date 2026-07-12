@@ -1,11 +1,11 @@
-\<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="pageTitle" value="Đơn hàng - Quản trị" scope="request" />
 <c:set var="activeMenu" value="don-hang" scope="request" />
 <jsp:include page="/common/admin-header.jsp" />
 
-<h2>🧾 Quản lý đơn hàng</h2>
+<h2>Quản lý đơn hàng</h2>
 
 <div class="category-bar">
     <a href="${pageContext.request.contextPath}/admin/don-hang" class="${empty selectedStatus ? 'active' : ''}">Tất cả</a>

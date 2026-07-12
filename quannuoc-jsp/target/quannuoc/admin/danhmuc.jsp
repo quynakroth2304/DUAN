@@ -5,7 +5,7 @@
 <jsp:include page="/common/admin-header.jsp" />
 
 <div class="toolbar">
-    <h2>🗂 Danh mục</h2>
+    <h2>Danh mục</h2>
     <a href="${pageContext.request.contextPath}/admin/danh-muc/them" class="btn">+ Thêm danh mục</a>
 </div>
 

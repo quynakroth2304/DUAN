@@ -5,15 +5,11 @@
 <jsp:include page="/common/header.jsp" />
 
 <div class="container">
-    <h2>🧾 Đơn hàng của tôi</h2>
+    <h2>Đơn hàng của tôi</h2>
 
     <c:choose>
         <c:when test="${empty listBill}">
-            <div class="empty-state">
-                <h2 style="margin-bottom:8px;">Chưa có đơn hàng nào</h2>
-                Đặt món đầu tiên của bạn ngay hôm nay.<br>
-                <a href="${pageContext.request.contextPath}/trang-chu" class="btn" style="margin-top:18px;">Xem thực đơn</a>
-            </div>
+            <div class="empty-state">Bạn chưa có đơn hàng nào.</div>
         </c:when>
         <c:otherwise>
             <table class="data-table">

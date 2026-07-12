@@ -33,7 +33,7 @@
                             <c:forEach items="${listToppingOfDrink}" var="dt">
                                 <label>
                                     <input type="checkbox" name="toppingId" value="${dt.topping.id}">
-                                        ${dt.topping.name} (+<fmt:formatNumber value="${dt.topping.price}" pattern="#,###" />đ)
+                                    ${dt.topping.name} (+<fmt:formatNumber value="${dt.topping.price}" pattern="#,###" />đ)
                                 </label>
                             </c:forEach>
                         </div>

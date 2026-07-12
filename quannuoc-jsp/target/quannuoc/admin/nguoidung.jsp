@@ -19,11 +19,11 @@
             <td>
                 <a href="${pageContext.request.contextPath}/admin/nguoi-dung/khoa?id=${u.id}"
                    onclick="return confirm('${u.active ? 'Khóa' : 'Mở khóa'} tài khoản này?');">
-                        ${u.active ? 'Khóa' : 'Mở khóa'}
+                    ${u.active ? 'Khóa' : 'Mở khóa'}
                 </a> |
                 <a href="${pageContext.request.contextPath}/admin/nguoi-dung/phan-quyen?id=${u.id}&admin=${u.role ? 0 : 1}"
                    onclick="return confirm('${u.role ? 'Gỡ quyền quản trị' : 'Cấp quyền quản trị'} cho người dùng này?');">
-                        ${u.role ? 'Gỡ quyền admin' : 'Cấp quyền admin'}
+                    ${u.role ? 'Gỡ quyền admin' : 'Cấp quyền admin'}
                 </a>
             </td>
         </tr>

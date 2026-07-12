@@ -1,38 +1,33 @@
 package dbconnection;
 
-import utils.EntityManagerUtils;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class jdbcmain {
+    private String url;
+    private String username;
+    private String password;
 
-    public static void main(String[] args) {
+    // Constructor nhận vào tên DB, user và password từ jdbcmain
+    public jdbcmain(String dbName, String username, String password) {
+        /* * MẶC ĐỊNH CHO SQL SERVER (Vì bạn đang dùng user "sa")
+         * Lưu ý: port mặc định là 1433. Nếu máy bạn dùng port khác, hãy sửa lại.
+         */
+        this.url = "jdbc:sqlserver://localhost:1433;databaseName=" + dbName + ";encrypt=true;trustServerCertificate=true;";
 
-        System.out.println("--- 1. TESTING JDBC CONNECTION ---");
-        // Lưu ý: Đổi "sa" thành "root" nếu bạn dùng MySQL
-        DatabaseConnection dcm = new DatabaseConnection("employee_db", "sa", "123");
+        /* * NẾU BẠN DÙNG MYSQL (user thường là "root"):
+         * Bôi đen comment (//) dòng url của SQL Server ở trên, và xóa dấu // ở dòng dưới đây:
+         * this.url = "jdbc:mysql://localhost:3306/" + dbName;
+         */
 
-        try (Connection connection = dcm.getConnection()) {
-            System.out.println("✅ JDBC Connected successfully!");
-        } catch (SQLException e) {
-            System.out.println("❌ Failed to connect via JDBC");
-            e.printStackTrace();
-        }
+        this.username = username;
+        this.password = password;
+    }
 
-        System.out.println("\n--- 2. TESTING JPA / HIBERNATE ---");
-        try (var em = EntityManagerUtils.getEntityManager()) {
-            System.out.println("✅ JPA EntityManager created successfully!");
-            System.out.println("✅ Tables should be created/updated in the database.");
-
-            // Bạn có thể thêm 1 lệnh lưu thử 1 nhân viên ở đây để test insert
-
-        } catch (Exception e) {
-            System.out.println("❌ Failed to initialize JPA");
-            e.printStackTrace();
-        } finally {
-            // Rất quan trọng: Đóng Factory để giải phóng bộ nhớ và kết thúc chương trình
-            EntityManagerUtils.close();
-            System.out.println("✅ Closed EntityManagerFactory. End of test.");
-        }
+    // Phương thức tạo và trả về Connection cho jdbcmain
+    public Connection getConnection() throws SQLException {
+        // Cố gắng thiết lập kết nối tới cơ sở dữ liệu
+        return DriverManager.getConnection(url, username, password);
     }
 }
